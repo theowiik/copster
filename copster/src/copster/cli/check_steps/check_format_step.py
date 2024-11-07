@@ -1,6 +1,9 @@
 from typing import Tuple
-from copster.check_step import CheckStep
+
 from sh import ruff
+
+from copster.cli.check_step import CheckStep
+
 
 class CheckFormatStep(CheckStep):
     def get_name(self) -> str:

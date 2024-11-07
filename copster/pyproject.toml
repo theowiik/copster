@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "copster"
 dynamic = ["version"]
-description = 'blaaaa'
+description = 'One command for checking typing, formatting and style. An opinionated Python code compositor for seamless formatting and type-checking, uniting tools like ruff and mypy in a single command.'
 readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"
@@ -26,6 +26,7 @@ classifiers = [
 ]
 dependencies = [
   "click",
+  "sh"
 ]
 
 [project.urls]
