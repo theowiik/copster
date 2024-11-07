@@ -1,0 +1,22 @@
+[project]
+name = "copster"
+version = "0.0.1"
+authors = [{ name="theowiik" }]
+description = "One command for checking typing, formatting and style. An opinionated Python code compositor for seamless formatting and type-checking, uniting tools like ruff and mypy in a single command."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/theowiik/copster"
+Issues = "https://github.com/theowiik/copster/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
