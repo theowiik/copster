@@ -3,9 +3,9 @@ from typing import Dict, List
 
 from copster.action_steps.format_step import FormatStep
 from copster.check_steps.check_format_step import CheckFormatStep
+from copster.check_steps.mymy_check import MyPyCheck
 from copster.emoji import fail, pass_, print_logo
 from copster.step import Step
-from copster.check_steps.mymy_check import MyPyCheck
 
 
 def _parse_args() -> Namespace:
@@ -34,12 +34,14 @@ def _run_checks() -> None:
     checks: List[Step] = [CheckFormatStep(), MyPyCheck()]
     _run_steps(checks)
 
-class StepState():
+
+class StepState:
     success: bool = False
     msg: str = ""
 
     def __init__(self, step: Step):
         self.step = step
+
 
 def _run_steps(steps: List[Step]) -> None:
     states: List[StepState] = [StepState(step) for step in steps]
@@ -61,6 +63,6 @@ def _run_steps(steps: List[Step]) -> None:
         else:
             print(f"{fail} {step.get_name()}")
             state.msg = f"Step failed: {step.get_name()}"
-    
+
     for state in states:
         print(state.msg)
